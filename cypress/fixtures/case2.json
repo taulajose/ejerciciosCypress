@@ -1,0 +1,4 @@
+{
+    "negocios":"li > a",
+    "products": "div.dnavigation__link > .icon-chevron-down"
+}

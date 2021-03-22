@@ -1,0 +1,4 @@
+{
+  "products": "div.dnavigation__link > .icon-chevron-down",
+  "prices": ".fontAzul > .price"
+}
