@@ -1,4 +1,5 @@
 {
   "products": "div.dnavigation__link > .icon-chevron-down",
-  "prices": ".fontAzul > .price"
+  "prices": ".fontAzul > .price",
+  "divPromo" : ".c-plan.hide-on-small-only.slick-slide.slick-active"
 }

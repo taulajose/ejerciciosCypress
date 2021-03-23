@@ -7,11 +7,20 @@ class Case{
             cy.get(locators.products).click();
             cy.get('a').contains('Planes de TV').click();
             cy.url().should('eq',"https://www.movistar.com.ar/productos-y-servicios/television/planes")
-            cy.get(locators.prices).each((element)=>{
-               cy.log(element.text())
-            })
+            
             let objprices = cy.get(locators.prices)
             objprices.its('length').should('eq',3)
+           
+            cy.get(locators.divPromo).each((element)=>{
+                let titulo = element.find('.text18').text()
+                let descuento =  element.find('.price.text42').text()
+                cy.log(titulo+"  Precio con descuento: " + descuento)    
+            })
+            let contador =1
+            cy.get(locators.divPromo).each((element)=>{
+                cy.wrap(element).screenshot("Promo N"+contador)
+                contador++
+            })
         })
     }
 
