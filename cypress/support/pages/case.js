@@ -14,11 +14,12 @@ class Case{
             cy.get(locators.divPromo).each((element)=>{
                 let titulo = element.find('.text18').text()
                 let descuento =  element.find('.price.text42').text()
-                cy.log(titulo+"  Precio con descuento: " + descuento)    
+                cy.log("Promocion: " +titulo+"  Precio con descuento: " + descuento)    
             })
             let contador =1
+            // guardo un screenshot de cada una de las promociones
             cy.get(locators.divPromo).each((element)=>{
-                cy.wrap(element).screenshot("Promo N"+contador)
+                cy.wrap(element).screenshot("Promo N° "+contador)
                 contador++
             })
         })
@@ -41,6 +42,7 @@ class Case{
             cy.get(locators.products).click();
             cy.get('.dnavigation__submenu').find('span').each((element)=>{
                 let contador=0
+                //Con este bucle por cada elemento verifico que ese elemento no coincida con ninguna de las palabras del array
                 while(contador<arrayNegativos.length){
                     cy.wrap(element.text()).should('not.eq',arrayNegativos[contador])
                     contador++
